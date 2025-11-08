@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - Stark Industries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="admin-header">
+            <h1>🔓 Admin Dashboard</h1>
+            <p>Welcome, {{ user.username }}! | Role: <span class="role-admin">{{ user.role }}</span></p>
+        </div>
+        
+        <div class="flag-panel">
+            <h2>🚩 SECURITY FLAG CAPTURED</h2>
+            <div class="flag-content">
+                <h3>npflag{{jwt_s3cr3t_3xp0s3d_w1n}}</h3>
+                <p>JWT Secret Exposure Vulnerability Exploited</p>
+            </div>
+        </div>
+        
+        <div class="system-info">
+            <h3>System Access: FULL</h3>
+            <p>Security Level: MAXIMUM</p>
+            <p>All protocols unlocked</p>
+        </div>
+        
+        <div class="dashboard-actions">
+            <button onclick="showJWTInfo()">View JWT Details</button>
+            <button onclick="location.href='/'">Logout</button>
+        </div>
+        
+        <div id="jwt-info" class="jwt-info" style="display: none;">
+            <h4>JWT Token Information:</h4>
+            <pre id="jwt-data"></pre>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        function showJWTInfo() {
+            const jwtInfo = document.getElementById('jwt-info');
+            const jwtData = document.getElementById('jwt-data');
+            
+            // Get JWT token from cookie
+            const token = getCookie('auth_token');
+            if (token) {
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                jwtData.textContent = JSON.stringify(payload, null, 2);
+            }
+            
+            jwtInfo.style.display = 'block';
+        }
+        
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+body { 
+    background: #0a0a2a; 
+    color: #00f0ff; 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container { 
+    max-width: 500px; 
+    margin: 50px auto; 
+    padding: 30px; 
+    background: rgba(10,15,30,0.9); 
+    border-radius: 10px; 
+    border: 1px solid #00f0ff;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+}
+
+.dashboard-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(10,15,30,0.9);
+    border-radius: 10px;
+    border: 1px solid #00f0ff;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #00f0ff;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    margin-bottom: 10px;
+}
+
+.login-form {
+    margin: 30px 0;
+}
+
+input, button { 
+    padding: 12px; 
+    margin: 8px 0; 
+    width: 100%; 
+    background: #1a1a2e; 
+    color: #00f0ff; 
+    border: 1px solid #00f0ff; 
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+button { 
+    background: #1a1a2e;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover { 
+    background: #00f0ff; 
+    color: #0a0a2a;
+    transform: translateY(-2px);
+}
+
+.guest-info {
+    background: rgba(0, 240, 255, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    border: 1px solid #00f0ff;
+}
+
+.security-note {
+    text-align: center;
+    font-size: 0.9em;
+    color: #88ccff;
+    margin-top: 20px;
+}
+
+.admin-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #00ff00;
+    padding-bottom: 20px;
+}
+
+.guest-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ff4444;
+    padding-bottom: 20px;
+}
+
+.role-admin {
+    color: #00ff00;
+    font-weight: bold;
+    background: rgba(0, 255, 0, 0.1);
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.role-guest {
+    color: #ff4444;
+    font-weight: bold;
+    background: rgba(255, 68, 68, 0.1);
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.flag-panel {
+    background: linear-gradient(45deg, rgba(0, 255, 0, 0.1), rgba(0, 200, 0, 0.2));
+    border: 2px solid #00ff00;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.flag-content h3 {
+    color: #00ff00;
+    font-size: 1.5em;
+    margin: 10px 0;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.access-denied {
+    background: rgba(255, 68, 68, 0.1);
+    border: 2px solid #ff4444;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.hint-panel {
+    background: rgba(255, 255, 0, 0.1);
+    border: 1px solid #ffff00;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.system-info {
+    background: rgba(0, 240, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.dashboard-actions {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.dashboard-actions button {
+    width: auto;
+    margin: 0 10px;
+    padding: 10px 20px;
+}
+
+.jwt-info, .token-info {
+    background: #1a1a2e;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+    border: 1px solid #00f0ff;
+}
+
+pre {
+    background: #0a0a1a;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    color: #88ccff;
+}

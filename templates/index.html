@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stark Industries - JWT Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ Stark Industries JWT Portal</h1>
+            <p>Secure Authentication System</p>
+        </div>
+        
+        <form action="/login" method="POST" class="login-form">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        
+        <div class="guest-info">
+            <h3>Demo Credentials:</h3>
+            <p><strong>Guest:</strong> guest / guest123</p>
+            <p><strong>Admin:</strong> admin / admin_top_secret_123</p>
+        </div>
+        
+        <div class="security-note">
+            <p>⚠️ Security Protocol: JWT Token Based Authentication</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

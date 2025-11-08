@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guest Dashboard - Stark Industries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="guest-header">
+            <h1>🔒 Guest Dashboard</h1>
+            <p>Welcome, {{ user.username }}! | Role: <span class="role-guest">{{ user.role }}</span></p>
+        </div>
+        
+        <div class="access-denied">
+            <h2>⚠️ Access Restricted</h2>
+            <p>Your current role has limited permissions.</p>
+            <p>Administrator role required for full system access.</p>
+        </div>
+        
+        <div class="hint-panel">
+            <h3>Security Challenge:</h3>
+            <p>Can you elevate your privileges to access the admin dashboard?</p>
+            <p>Hint: Check the browser console and JavaScript source code...</p>
+        </div>
+        
+        <div class="dashboard-actions">
+            <button onclick="location.href='/'">Logout</button>
+            <button onclick="showTokenInfo()">View My Token</button>
+        </div>
+        
+        <div id="token-info" class="token-info" style="display: none;">
+            <h4>Your JWT Token:</h4>
+            <pre id="token-data"></pre>
+        </div>
+    </div>
+
+    <script>
+        function showTokenInfo() {
+            const tokenInfo = document.getElementById('token-info');
+            const tokenData = document.getElementById('token-data');
+            
+            const token = getCookie('auth_token');
+            if (token) {
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                tokenData.textContent = JSON.stringify(payload, null, 2);
+            }
+            
+            tokenInfo.style.display = 'block';
+        }
+        
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+    </script>
+</body>
+</html>
